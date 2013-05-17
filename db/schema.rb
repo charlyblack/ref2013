@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517021050) do
+ActiveRecord::Schema.define(:version => 20130517064543) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -89,6 +89,31 @@ ActiveRecord::Schema.define(:version => 20130517021050) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "refinery_copywriting_phrase_translations", :force => true do |t|
+    t.integer  "refinery_copywriting_phrase_id"
+    t.string   "locale"
+    t.text     "value"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "refinery_copywriting_phrase_translations", ["locale"], :name => "index_copywriting_phrase_translations_on_locale"
+  add_index "refinery_copywriting_phrase_translations", ["refinery_copywriting_phrase_id"], :name => "index_copywriting_phrase_translations_on_copywriting_phrase_id"
+
+  create_table "refinery_copywriting_phrases", :force => true do |t|
+    t.string   "name"
+    t.text     "default"
+    t.text     "value"
+    t.string   "scope"
+    t.integer  "page_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "phrase_type"
+    t.date     "last_access_at"
+  end
+
+  add_index "refinery_copywriting_phrases", ["name", "scope"], :name => "index_copywriting_phrases_on_name_and_scope"
 
   create_table "refinery_image_page_translations", :force => true do |t|
     t.integer  "refinery_image_page_id"
@@ -352,6 +377,30 @@ ActiveRecord::Schema.define(:version => 20130517021050) do
   end
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
+
+  create_table "refinery_video_files", :force => true do |t|
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.string   "file_ext"
+    t.string   "file_uid"
+    t.string   "file_mime_type"
+    t.integer  "video_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "external_url"
+    t.boolean  "use_external"
+  end
+
+  create_table "refinery_videos", :force => true do |t|
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "config"
+    t.string   "title"
+    t.integer  "poster_id"
+    t.boolean  "use_shared"
+    t.text     "embed_tag"
+  end
 
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"

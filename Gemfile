@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'mysql2'
 end
 
 
@@ -52,3 +52,4 @@ gem 'refinerycms-calendar', '~>2.0.0'
 gem "refinerycms-news", '~> 2.0.0'
 gem 'refinerycms-copywriting'
 gem 'refinerycms-memberships','~> 2.0.0', :git =>'git://github.com/rbriank/refinerycms_membership.git'
+gem 'refinerycms-videojs', git: 'git@github.com:adexin-team/refinerycms-videojs.git'
