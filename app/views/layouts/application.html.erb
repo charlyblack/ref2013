@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<%= render :partial => '/refinery/html_tag' %>
+<% site_bar = render(:partial => '/refinery/site_bar', :locals => {:head => true}) -%>
+<%= render :partial => '/refinery/head' %>
+<body>
+<%= site_bar -%>
+<header id="header">
+<%= render :partial => '/refinery/header' -%>
+</header>
+<div class="container-fluid">
+
+<div class="span4">
+<%= yield %>
+</div>
+<div class="span2">&nbsp;</div>
+<h3>Sidebar</h3>
+<ul>
+<li><%= link_to "Link1", "/path1" %></li>
+<li><%= link_to "Link2", "/path2" %></li>
+<li><%= link_to "Link3", "/path3" %></li>
+</ul>
+</div>
+</div>
+<footer>
+<%= render :partial => '/refinery/footer' -%>
+</footer>
+</div>
+</div>
+<%= render :partial => '/refinery/javascripts' %>
+</body>
+</html>

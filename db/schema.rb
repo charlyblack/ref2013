@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517064543) do
+ActiveRecord::Schema.define(:version => 20130519140524) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(:version => 20130517064543) do
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
+
+  create_table "refinery_bookings", :force => true do |t|
+    t.datetime "date"
+    t.boolean  "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "refinery_bookings", ["date"], :name => "index_refinery_bookings_on_date", :unique => true
 
   create_table "refinery_calendar_events", :force => true do |t|
     t.string   "title"
@@ -202,6 +211,37 @@ ActiveRecord::Schema.define(:version => 20130517064543) do
   end
 
   add_index "refinery_membership_emails", ["title"], :name => "index_refinery_membership_emails_on_title", :unique => true
+
+  create_table "refinery_menus", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "permatitle"
+  end
+
+  add_index "refinery_menus", ["permatitle"], :name => "index_refinery_page_menus_on_permatitle", :unique => true
+
+  create_table "refinery_menus_links", :force => true do |t|
+    t.integer "parent_id"
+    t.integer "lft"
+    t.integer "rgt"
+    t.integer "depth"
+    t.integer "refinery_menu_id"
+    t.string  "menu_match"
+    t.integer "resource_id"
+    t.string  "resource_type"
+    t.string  "title_attribute"
+    t.string  "custom_url"
+    t.string  "label"
+    t.string  "id_attribute"
+    t.string  "class_attribute"
+  end
+
+  add_index "refinery_menus_links", ["depth"], :name => "index_refinery_page_positions_on_depth"
+  add_index "refinery_menus_links", ["id"], :name => "index_refinery_page_positions_on_id"
+  add_index "refinery_menus_links", ["lft"], :name => "index_refinery_page_positions_on_lft"
+  add_index "refinery_menus_links", ["parent_id"], :name => "index_refinery_page_positions_on_parent_id"
+  add_index "refinery_menus_links", ["rgt"], :name => "index_refinery_page_positions_on_rgt"
 
   create_table "refinery_news_item_translations", :force => true do |t|
     t.integer  "refinery_news_item_id"

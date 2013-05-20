@@ -1,0 +1,1347 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <!-- GENERATE MENUS IF NEEDED -->
+    
+    <!-- LOAD META TAGS, TITLE, AND HEADER -->
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title></title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="text/javascript" src="/site/jsinclude.js"></script>
+    <script src="/ministryinc/jquery-ui-1.7.3.custom.min.js"></script> 
+    <script type="text/javascript" src="/jquery.fancybox-1.3.2/fancybox/jquery.fancybox-1.3.2.js"></script>
+    <link rel="stylesheet" href="/jquery.fancybox-1.3.2/fancybox/jquery.fancybox-1.3.2.css" type="text/css" media="screen" />
+    
+    <style type="text/css" id="bgcolor-style">
+        .bgcolor-back {background-color:#4e703e;}
+        .bgcolor-font {color:#4e703e;}
+        .bgcolor-font:visited {color:#4e703e;}
+    </style>
+    <style type="text/css" id="color1-style">
+        .color1-back {background-color:#ede7bf;}
+        .color1-font {color:#ede7bf;}
+        .color1-font:visited {color:#ede7bf;}
+    </style>
+    <style type="text/css" id="color2-style">
+        .color2-back {background-color:#183001;}
+        .color2-font {color:#183001;}
+        .color2-font:visited {color:#183001;}
+    </style>
+    <style type="text/css" id="color3-style">
+        .color3-back {background-color:#001e45;}
+        .color3-font {color:#001e45;}
+        .color3-font:visited {color:#001e45;}
+    </style>
+    <style type="text/css" id="color4-style">
+        .color4-back {background-color:#304924;}
+        .color4-font {color:#304924;}
+        .color4-font:visited {color:#304924;}
+    </style>
+    <style type="text/css" id="color5-style">
+        .color5-back {background-color:#000000;}
+        .color5-font {color:#000000;}
+        .color5-font:visited {color:#000000;}
+    </style>
+    <style type="text/css" id="color6-style">
+        .color6-back {background-color:#222;}
+        .color6-font {color:#222;}
+        .color6-font:visited {color:#222;}
+    </style>
+    <style type="text/css" id="color7-style">
+        .color7-back {background-color:#304924;}
+        .color7-font {color:#304924;}
+        .color7-font:visited {color:#304924;}
+    </style>
+    <style type="text/css" id="color8-style">
+        .color8-back {background-color:white;}
+        .color8-font {color:white;}
+        .color8-font:visited {color:white;}
+    </style>
+    <style type="text/css" id="color9-style">
+        .color9-back {background-color:#000000;}
+        .color9-font {color:#000000;}
+        .color9-font:visited {color:#000000;}
+    </style>
+    <style type="text/css" id="color10-style">
+        .color10-back {background-color:black;}
+        .color10-font {color:black;}
+        .color10-font:visited {color:black;}
+    </style>
+    
+    <script language="javascript" type="text/javascript">
+        function randomstring()
+        {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for( var i=0; i < 5; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+        
+        function setGlobals() {
+            
+            window.ga_pagetitle = "%2Fsite%2Fdefault%2Easp";
+            
+        }
+        setGlobals();
+
+		var vpHeight = $(window).height();
+		var modalHeight = vpHeight - 40;
+        
+        function qsItem(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if(results == null)
+                return "";
+            else
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        
+        //mods function definition
+        var mods = function(){
+        
+        }
+        
+        //function to open color palette manager
+        var openColorAdmin = function() {
+            $('#colorAdminContainer').show(400, function() {$(this).animate({'height': '250px'});}); $('body').css('padding-bottom', '250px');
+        }
+        
+        //ajax setup
+        $.ajaxSetup({
+            beforeSend: function() {
+            
+            },
+            complete: function() {
+                mods.apply();
+            }
+        });
+        		
+        $(document).ready(function () {
+            $('.tagedit').each(function() {
+                
+                if ($(this).hasClass("color1-font")) {
+                    $(this).removeClass("color1-font");
+                }
+                
+                if ($(this).hasClass("color2-font")) {
+                    $(this).removeClass("color2-font");
+                }
+                
+                if ($(this).hasClass("color3-font")) {
+                    $(this).removeClass("color3-font");
+                }
+                
+                if ($(this).hasClass("color4-font")) {
+                    $(this).removeClass("color4-font");
+                }
+                
+                if ($(this).hasClass("color5-font")) {
+                    $(this).removeClass("color5-font");
+                }
+                
+                if ($(this).hasClass("color6-font")) {
+                    $(this).removeClass("color6-font");
+                }
+                
+                if ($(this).hasClass("color7-font")) {
+                    $(this).removeClass("color7-font");
+                }
+                
+                if ($(this).hasClass("color8-font")) {
+                    $(this).removeClass("color8-font");
+                }
+                
+                if ($(this).hasClass("color9-font")) {
+                    $(this).removeClass("color9-font");
+                }
+                
+                if ($(this).hasClass("color10-font")) {
+                    $(this).removeClass("color10-font");
+                }
+                
+            });
+        
+			
+			if($("#SiteSettings").length == 0){		
+				$.get('/site/cmsManagerBox.asp?sec_id=180013872&r=jhlzby2v', function(data) {
+					$("body").prepend(data);
+				});
+			}
+			$.get('/site/cmsColorAdmin.asp?sec_id=180013872&r=btlmmdo6', function(data) {
+					$("body").prepend(data);
+				});
+			
+            $("a.fb").fancybox({
+                'transitionIn': 'none',
+                'transitionOut': 'none',
+                'speedIn': 600,
+                'speedOut': 200,
+                'overlayShow': true,
+                'overlayColor': 'White',
+                'overlayOpacity': 0.5,
+                'centerOnScroll': true,
+                'width': 952,
+                'height': $(window).height() - 80,
+                'padding': 0,
+                'margin': 0,
+                'hideOnOverlayClick': false,
+                'hideOnContentClick': false,
+				'onStart': function (){
+					document.body.style.overflow = 'hidden';
+					$('embed, object, select').css('visibility', 'hidden');
+                    //$('#fancybox-wrap').animate({'top':20},0);
+				},
+				'onClosed': function (){
+					document.body.style.overflow = 'scroll';
+					$('embed, object, select').css({ 'visibility' : 'visible' });
+				}
+            });
+			$(".fb").css({'visibility' : 'visible'});
+
+            var fbc_settings = {
+                'transitionIn': 'elastic',
+                'transitionOut': 'fade',
+                'speedIn': 600,
+                'speedOut': 200,
+                'overlayShow': true,
+                'overlayColor': 'Black',
+                'overlayOpacity': 0.5,
+                'centerOnScroll': true,
+                'width': 600,
+                'height': 400,
+                'padding': 0,
+                'margin': 0,
+                'opacity': true,
+                'hideOnOverlayClick': true,
+                'hideOnContentClick': false,
+				'onStart': function (){
+					document.body.style.overflow = 'hidden';
+					$('embed, object, select').css('visibility', 'hidden');
+                    //$('#fancybox-wrap').animate({'top':20},0);
+				},
+				'onClosed': function (){
+					document.body.style.overflow = 'scroll';
+					$('embed, object, select').css({ 'visibility' : 'visible' });
+				}
+            };
+
+            $("a.fbc").fancybox(fbc_settings);
+			$(".fbc").css({'visibility' : 'visible'});
+
+            $("a.fbv").each(function() {
+                var $a = $(this);
+                var h = $a.attr("rel").slice(0,$(this).attr("rel").indexOf("-"));
+                var w = $a.attr("rel").slice($(this).attr("rel").indexOf("-") + 1);
+                $a.fancybox({
+                    'transitionIn': 'elastic',
+                    'transitionOut': 'fade',
+                    'speedIn': 600,
+                    'speedOut': 200,
+                    'overlayShow': true,
+                    'overlayColor': 'Black',
+                    'overlayOpacity': 0.5,
+                    'centerOnScroll': true,
+                    'width': parseInt(w),
+                    'height': parseInt(h),
+                    'padding': 0,
+                    'margin': 0,
+                    'opacity': true,
+                    'hideOnOverlayClick': true,
+                    'hideOnContentClick': false,
+				    'onStart': function (){
+					    document.body.style.overflow = 'hidden';
+					    $('embed, object, select').css('visibility', 'hidden');
+                        //$('#fancybox-wrap').animate({'top':20},0);
+				    },
+				    'onClosed': function (){
+					    document.body.style.overflow = 'scroll';
+					    $('embed, object, select').css({ 'visibility' : 'visible' });
+				    },
+                    'showNavArrows': false
+                });
+            });
+			$(".fbv").css({'visibility' : 'visible'});
+
+			
+
+            //change tagedits
+            $('.tagedit-icon').html('<img src="/ministryinc/images/related/edit-icon.png" style="border:none; margin:0 0 0 20px;" />');
+
+            //classname functions for anchor hovers
+
+            $('.jho').each(function(){
+                var $e = $(this);
+                var backTO = "";
+                var fontTO = "";
+                var backFROM = "";
+                var fontFROM = "";
+
+                var classList = $e.attr('class').split(/\s+/);
+                $.each( classList, function(index, item){
+                    if (item.indexOf("-back") != -1 && item.indexOf("color") != -1) {
+                        backFROM = item;
+                    }
+                    if (item.indexOf("-font") != -1 && item.indexOf("color") != -1) {
+                        fontFROM = item;
+                    }
+                });
+                
+                if ($e.hasClass("jho-both") || $e.hasClass("jho-back")) {
+                    if ($e.hasClass("jho-both")) {
+                        backTO = $e.attr("rel").slice(0,$e.attr("rel").indexOf("|"));
+                    }
+                    else {
+                        backTO = $e.attr("rel");
+                    }
+                }
+                if ($e.hasClass("jho-both") || $e.hasClass("jho-font")) {
+                    if ($e.hasClass("jho-both")) {
+                        fontTO = $e.attr("rel").slice($e.attr("rel").indexOf("|") + 1);
+                    }
+                    else {
+                        fontTO = $e.attr("rel");
+                    }
+                }
+
+                $e.hover(
+                    function() {
+                        //alert("backfrom " + backFROM + " and fontfrom " + fontFROM);
+                        if ($e.hasClass("jho-both") || $e.hasClass("jho-back")) {
+                            
+                            $(this).removeClass(backFROM);
+                            $(this).addClass(backTO);
+                        }
+                        if ($e.hasClass("jho-both") || $e.hasClass("jho-font")) {
+                            
+                            $(this).removeClass(fontFROM);
+                            $(this).addClass(fontTO);
+                        }
+                        //alert(($e).attr("class"));
+                    },
+                    function() {
+                        if ($e.hasClass("jho-both") || $e.hasClass("jho-back")) {
+                            $(this).removeClass(backTO);
+                            $(this).addClass(backFROM);
+                        }
+                        if ($e.hasClass("jho-both") || $e.hasClass("jho-font")) {
+                            $(this).removeClass(fontTO);
+                            $(this).addClass(fontFROM);
+                        }
+                    }
+                );
+            });
+            
+            var showstring = "";
+            var hidestring = "";
+            var runstring = "";
+            var showelements = showstring.split('|');
+            var hideelements = hidestring.split('|');
+            var runfunctions = runstring.split('|');
+            
+            
+		});
+    </script>
+    
+    
+	<style>
+	.fb {visibility: hidden;}
+	
+	</style>
+    <style type="text/css">
+        #questions {width:100%; position:relative; left:10px;}
+        #questions div {}
+        #questions div.questionbeside {position:relative; float:left; text-align:right; width:25%; margin:10px 0 10px 0; clear:both;}
+        #questions div.questionunderneath {text-align:left; position:relative; float:left; width:100%; margin:10px 0 0 0;}
+        #questions div.responseunderneath {width:100%; float:left; text-align:left; position:relative; margin:4px 0 10px 0;}
+        #questions div.responsebeside {width:70%; float:left; text-align:left; position:relative; left:10px; margin:10px 0 10px 0;}
+        #questions input, #questions select, #questions textarea {padding:4px; border:1px solid sliver;}
+        #questions input:hover, #questions textarea:hover {background:#f5f5f5;}
+        #extraInfo {0display:none;}
+        .aedit {background:url(/site/images/opacity/black50.png); border:#1F5099; color:white !important; font-size:12px; padding:5px 13px 5px 13px; top:7px; margin-right:10px; margin-bottom:10px; position:relative; text-transform:uppercase; text-decoration:none; border:1px solid transparent;}
+        .aedit:hover {0background:#296ACC; background:url(/site/images/opacity/black60.png); color:White; border:1px solid #ccc; cursor:pointer;}
+
+        a.tagedit
+ {
+	display: inline-block;
+	overflow: hidden;
+    text-decoration: none;
+    position: relative; 
+    font-size:13px; 
+    font-family:Arial; 
+    color:white !important; 
+    padding:4px 12px 4px 12px;
+    border: 2px solid #1E5A85; 
+    background: #1E5A85 url(/cmscripts2/Images/btnBackGradient.png) 50% 50% repeat; 
+    font-weight: normal;
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px; 
+    white-space: nowrap;
+    0margin: -5px 0 -10px;
+	cursor:pointer;
+	line-height: 1.2em;
+ }
+ 
+ input.tagedit
+ {
+	overflow: hidden;
+    text-decoration: none;
+    position: relative; 
+    font-size:13px; 
+    font-weight:normal;
+    font-family:Arial; 
+    color:#ffffff; 
+    padding:4px 12px 4px 12px;
+    border: 2px solid #1E5A85; 
+    background: #1E5A85 url(/cmscripts2/Images/btnBackGradient.png) 50% 50% repeat; 
+    font-weight: normal;
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px; 
+    text-transform:uppercase;
+    white-space: nowrap;
+    margin: 0;
+	cursor:pointer;
+	position:relative;
+	top:-8px;
+ }
+ 
+ .tagedit:hover {0background:#174566;}
+
+		
+		.fwapi-library-section {position:relative; overflow:hidden;}
+		.fwapi-library-section h3.widget-title {}
+		div.fwapi-library-item {position:relative; clear:both; height:24px; font-size:12px;}
+		span.fwapi-library-item-date {position:absolute; width:80px;}
+		span.fwapi-library-item-link {position:absolute; left:90px;}
+		
+	
+    </style>
+    <link href="/site/styleinc.css" type="text/css" rel="Stylesheet" />
+    <link rel="Stylesheet" type="text/css" media="print" href="/site/css/print.css" />
+    <script type="text/javascript" src="/ministryinc/lightbox/js/jquery.lightbox-0.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/ministryinc/lightbox/css/jquery.lightbox-0.5.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /> 
+    
+    <script language="JavaScript" src="/jquery.jgrowl.js" type="text/javascript"></script>
+    <link href="/jquery.jgrowl.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript">
+            function showGrowlAlerts(){
+                
+                    $.jGrowl('', { life: 20000, sticky: false, header: 'Creating/Removing Primary Admins', moreInfo: 'We have added the ability to enable or disable the &quot;primary admin&quot; feature of a user.&nbsp; Previously, this could only be done by Finalweb personnel.&nbsp; Now, it can be done under Site Manager &gt; User Accounts &gt; Edit Login Accounts.&nbsp; Click &quot;Permissions&quot; next to the user you want to change, and scroll to the bottom to enable/disable this permission.' });
+                    
+                    $.jGrowl('', { life: 20000, sticky: false, header: 'Email System Upgrade', moreInfo: 'We have upgraded to the latest version of IceWarp email software, providing compatibility with Internet Explorer 10 and other modern browser enhancements. A new tablet mode is included for iPads and other tablets. It is important to remember that, first, your initial login to the webmail system might be slow as your folders are being synchronized for the first time since the upgrade. Accessing large folders with many files for the first time may take a few seconds, or even a minute or two if they contain thousands of messages. Secondly, Internet Explorer 7 is no longer supported. Users should upgrade to Internet Explorer 8 or above, or use Firefox or Chrome as their browser. Internet Explorer 7 will still work, but only in tablet mode which is less functional.' });
+                    
+                    $.jGrowl('New easy-to-use color palette management tool.', { life: 20000, sticky: false, header: 'Color Palette Manager Update', moreInfo: 'A new color palette management tool is now live for most templates. Makes changes to template colors live and then save when done. ' });
+                    
+            }
+            
+    </script>
+	
+    <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="/jquery.easySlider1.7.js"></script>
+		<script type="text/javascript">
+		    $(document).ready(function() {
+		        $("#boxSlider").easySlider({
+		            prevId: "boxPrev",
+		            nextId: "boxNext"
+		        });
+
+		        mods.apply();
+		    });
+
+		    mods = function() {
+		        $('#header h1, #header h2, #header h3, #content h1, #content h2, #content h3').addClass("color6-font");
+		        //$('.content a').addClass("color3-font");
+		        $('.content a').addClass("color7-font");
+		        $('.contentHeader .pagetitle1, .contentHeader, .contentHeader font b').addClass("color6-font");
+		        $('.boxTitle').addClass("color10-font");
+		        $('.blockContent').addClass("color10-font");
+		        $('.blockContent .title').addClass("color6-font");
+		        $('.blockContent a').addClass("color7-font");
+		        $('.tagedit').removeClass("color7-font");
+		        $('.tblItemList tr.trItemListHeader').addClass("color2-back color8-font");
+		    }
+    </script>
+	<link href="/site/css/dropdown/dropdown.css" media="screen" rel="stylesheet" type="text/css" />
+	<style>
+html{
+  margin:0px;
+  padding: 0px;
+}
+
+body{
+	/*THESE COLORS SHOULD BE MODIFIABLE BY THE USER*/
+	background-image: url('/site/style9110/images9110/background_texture.png');
+	padding: 0px;
+	margin: 0px;
+	font-family: Lucida Sans Unicode;
+	font-size: 14px;
+}
+
+h2, h1, h3{
+}
+
+a img,{
+	border: 0px;
+}
+
+p a img{
+	border: 0px;
+}
+
+a span img{
+	border: 0px;
+}
+
+a{
+
+}
+
+hr{
+	/*opacity: .5;*/
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+
+.header_wrapper{
+	/*THESE COLORS SHOULD BE MODIFIABLE BY THE USER*/
+	background-image: url('/site/style9110/images9110/header_texture.png'); background-position:center; background-repeat:repeat-y;
+	width: 100%;
+	height: 107px;
+	z-index: 7;
+	position:relative;
+}
+
+.header{
+	width: 975px;
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+	z-index:5;
+	height:107px;
+}
+
+#search{
+	float: right;
+	position: relative;
+	top:14px;
+	opacity: .75;
+	margin-right:12px;
+}
+
+#search:hover{
+  opacity: 1;
+}
+
+#searchBox {padding:5px;}
+
+#logo {float:left; 0width:300px; font-size:20px; margin:0 40px 0 0;}
+#logo a {text-decoration:none;}
+#ministryName {position:relative; top:0px; margin:0px; padding:0px;}
+#ministryName h1 {margin:10px 0 0 0; padding:0px; font-family:'Antic', serif; text-shadow: 2px 2px 4px #888; color:#333}
+
+.headerNav{
+	position: relative;
+	float: left;
+	top: 62px;
+	width: 600px;
+	z-index: 5;
+}
+
+.menuTop{
+  width: 810px;
+  float: left;
+	position: relative;
+	height: 50px;
+	z-index: 3;
+}
+
+.menuTopInt{
+	float: left;
+}
+
+.menuTop ul li a{
+	text-decoration: none;
+	color: black;
+	display: block;
+	font-family: Lucida Sans Unicode;
+	/*
+	border-right: 2px solid #000;
+	padding: 8px;
+	padding-bottom: 10px;
+	*/
+}
+
+.menuTop ul li{
+	width: auto;
+	float: left;
+	padding: 5px;
+	padding-right: 20px;
+	padding-bottom: 15px;
+	font-size: 20px;
+	color: black;
+	font-family: Lucida Sans Unicode;
+}
+
+.menuTop ul li.subMenu{
+  background: url(/site/style9110/images9110/down_arrow.png) no-repeat right 17px;
+}
+
+.menuTop ul li ul li{
+	padding: 0px;
+	width: 225px;
+}
+
+.menuTop ul li ul{
+	width: 237px;
+	border-top: 0px solid #000;
+}
+
+.menuTop ul li ul li a{
+	display: block;
+	width: 225px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	margin-top: -1px;
+	border-top: 1px solid #1f1c15;
+	border-bottom: 1px solid #1f1c15;
+	border-left: 1px solid #1f1c15;
+	border-right: 1px solid #1f1c15;
+	font-size: 15px;
+	background: url(/site/images/opacity/white90.png);
+}
+
+.menuTop ul li ul li a:hover{
+	/*THESE COLORS SHOULD BE MODIFIABLE BY THE USER*/
+	background:white;
+}
+
+
+.rotationWrapper{
+	width: 1071px;
+	height: 376px;
+	position: relative;
+	top: -10px;
+	margin:auto auto -30px auto;
+}
+
+.topBarEdit{
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative; 
+	left: 446px;
+	top: -20px;
+	top: -17px\9;
+	margin-bottom: -25px;
+}
+
+.mainBodyWrapper{
+	width: 915px;
+	margin:auto;
+	background: url('/site/style9110/images9110/main_wrapper_background.jpg');
+	padding: 10px 30px 15px 30px;
+	top:20px;
+	position:relative;
+}
+
+.mainBodyWrapperTop{
+	margin-left:auto;
+	position: relative; 
+}
+
+.mainBodyWrapperTopInt{
+	0margin-top: 0px;
+}
+
+.mainBodyWrapperBottom{
+	width: 1029px;
+	height: 92px;
+	background: url('/site/style9110/images9110/wrapper_bottom.png') center no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin-bottom: 60px;*/
+	margin-bottom: -5px;
+	position: relative;
+	z-index:2;
+}
+
+.wrapperClearFix{
+	width: 100%;
+	clear: both;
+	margin-top: 20px;
+}
+
+.contentHeader .pagetitle1, .contentHeader, .contentHeader font b{
+	font-size: 20px;
+	font-weight: bold;
+}
+.contentHeader{
+	position: relative;
+	margin-top: 33px;
+	display: block;
+	*top:0px;
+}
+.tblItemList{
+	position: relative;
+	top: 20px;
+	*top: 0px;
+}
+
+.boxesBackground{
+  margin-left: auto;
+  margin-right: auto;
+  width: 975px;
+	height: 200px;
+	position: relative;
+	top: 20px;
+	background: url(/site/images/opacity/white60.png);
+	clear:both;
+}
+
+.boxesWrapper{
+	width: 915px;
+	height: 140px;
+	padding: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+#boxSlider{
+	width: 915px;
+	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+#boxSlider img{
+	border: none;
+	}	
+
+#boxSlider ul, #boxSlider li{
+	margin:0;
+	padding:0; 
+	list-style:none; 
+	}
+
+#boxSlider li{
+	/* 
+		define width and height of list item (slide)
+		entire slider area will adjust according to the parameters provided here
+	*/ 
+	width:915px;
+	height:150px;
+	overflow:hidden;
+  margin-right: 0px;  
+	}
+  
+#boxPrev, #boxNext{
+  z-index: 2000; 
+	display:block;
+	width:30px;
+	height:77px;
+	position:relative;
+	float: left;
+	top: -60px;
+	left:-60px;
+	}	
+#boxNext{ 
+	left:915px;
+	}														
+#boxPrev a, #boxNext a{  
+	display:block;  
+	width:30px;
+	height:77px;
+	background:url('/site/style9110/images9110/previous.png') no-repeat 0 0;	
+	}	
+#boxNext a{ 
+	background:url('/site/style9110/images9110/next.png') no-repeat 0 0;	
+	}
+  
+	/* image replacement */
+.graphic, #boxPrev, #boxNext{
+	margin:0;
+	padding:0;
+	display:block;
+	overflow:hidden;
+	text-indent:-8000px;
+	}
+	/* // image replacement */		
+
+.box{
+  float: left;
+  height: 168px;
+  width: 178px;
+  margin-right: 5px;
+  background: url(/site/style9110/images9110/box_background.png) no-repeat top center;
+}
+
+.boxContents{
+  height: 108px;
+  width: 158px;
+  padding: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /* this color should be changable */
+  background: #fff;
+}
+
+.boxContents .tagedit{
+	float: left; 
+	margin-bottom: -100px;
+}
+
+.boxTitle{
+  font-family: Lucida Sans Unicode
+  font-size: 18px;
+  display: block;
+  position: relative;
+  top: 5px;
+  text-align: center;
+}
+
+.content{
+	width: 500px;
+	display: block;
+	overflow: none;
+	position: relative;
+	float: left;
+	top: 0px;
+	left: 20px;
+	font-size: 14px;
+	line-height:20px;
+	padding-right: 20px;
+}
+
+.internalContent{
+	margin-left: auto;
+	margin-right: auto;
+	width: 955px;
+	padding: 10px;
+}
+
+#rightMenuWrapper{
+	min-height: 250px;
+	width: 250px;
+	margin-bottom: -10px;
+	background: url(/site/style9110/images9110/sidebar_background.png) left top no-repeat;
+	position: relative;
+	display: block; 
+	right: 15px;
+	top: 30px;
+	padding-left: 0px;
+	float: right;
+	/*THESE COLORS SHOULD BE MODIFIABLE BY THE USER*/
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.block{
+  width: 250px;
+  height: 180px;
+  position: relative;
+  0background: url(/site/style9110/images9110/block_background.png);
+}
+
+.blockBackground{
+  width: 250px;
+  height: 150px;
+  position: relative;
+  top: 11px;
+  left: 12px;
+  margin-top: 20px;
+  margin-bottom: -150px;
+}
+
+.blockContent{
+  width: 250px;
+  min-height: 150px;
+  position: relative;
+  top: -19px;
+  left: 12px;
+  margin-top: -150px;
+}
+
+.blockContent .title{
+	font-size: 18px;
+	font-weight: bold;
+	position: absolute;
+	top: -25px;
+	margin-bottom: -25px;
+}
+
+.blockContent p{
+margin-top: 20px;
+padding: 5px;
+}
+
+.blockContent img 
+{
+    -moz-box-shadow: 6px 6px 5px #888;
+-webkit-box-shadow: 6px 6px 5px #888;
+box-shadow: 6px 6px 5px #888;
+border:1px solid #333;
+}
+
+.blockContent a{
+}
+
+#rightMenuWrapper .tagedit{
+	position: relative;
+	top: -15px;
+	right: 0px;
+	display: block;
+	margin-left: 120px;
+	width: auto;
+	text-align: center;
+}
+
+/* SECONDARY MENU STYLES */
+/* General menu styling */
+.menu2 { color: #ffffff; list-style-type: none; width: 100%; margin-left: 10px;}
+/* Add custom bullet icon URLs based on template here */
+.menu2 ul { list-style-type: none; margin: 0px; padding: 0px 0 0 5px; position: relative; width: 100%; }
+.menu2 li { background: url('/site/style9110/images9110/menu_separation.png') no-repeat 0px 60px; height: 58px; list-style-type: none; margin: 0 0 3px 0; overflow: hidden; padding: 10px 0 0 0; position: relative; text-align: left; width: 100%; }
+/* Level one */
+.menu2 a, .menu2 a:visited { color: #ffffff; display: block; font-family: Arial, Verdana, Sans-Serif; font-size: 17px; font-weight: bold; margin: 0px; padding 0px; position: relative; text-align: left; text-decoration: none; }
+.menu2 a:hover, .menu2 ul ul a:hover{ color: #ffffff; }
+.menu2 :hover > a, .menu2 ul ul :hover > a { color: #ffffff; }
+/* Level two */
+.menu2 ul ul { left: 0px; position: absolute; top: 33px;}
+.menu2 ul ul a, .menu2 ul ul a:visited { color: #ffffff; font-size: 12px; padding: 0 0 0 10px; position: relative; }
+.menu2 ul ul a:hover{ color: #ffffff; }
+.menu2 ul ul :hover > a.drop { color: #ffffff; }
+.menu2 ul ul li { border: none; display: list-item; height: 30px; margin: 0px; padding: 0px; background: none;}
+/* END SECONDARY MENU STYLES */
+
+.footer_background{
+	width: 975px;
+	height: 60px;
+	margin-bottom: -60px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 10px;
+	color: #fff;
+	position: relative;
+	z-index: 1;
+}
+
+.footer_contents{
+	width: 975px;
+	height: 60px;
+	margin-bottom: -60px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 10px;
+	color: #fff;
+	position: absolute;
+	left: 35px;
+}
+
+.footerRight{
+  float: right;
+  padding-right: 20px;
+  margin-top: 23px;
+  *position: relative;
+  *width: 100%;
+  display: block;
+}
+
+.footerLeft{
+	float: left;
+	  margin-top: 23px;
+}
+
+.footerLeft a{
+  font-size: 14px;
+  margin-right: 30px;
+}
+
+.footer_contents a{
+  text-decoration: none;
+  color:white;
+}
+
+.footer_contents a:hover{
+  text-decoration: underline;
+}
+
+
+/* Easy Slider */
+
+#slider img{
+	border: none;
+	}	
+#sliderWrapper{
+	position: absolute; 
+	left: 48px;
+	top: 42px;
+    z-index:2;
+}
+
+#slider{border-radius:20px; overflow:hidden; box-shadow: 0 0 8px 1px #111; }
+
+#slider ul, #slider li{
+	margin:0;
+	padding:0;
+	list-style:none;
+	background
+	}
+
+#slider li{
+	/* 
+		define width and height of list item (slide)
+		entire slider area will adjust according to the parameters provided here
+	*/ 
+	width:975px;
+	height:300px; 
+	overflow:hidden;
+	}	
+#prevBtn, #nextBtn{ 
+	display:block;
+	width:30px;
+	height:77px;
+	position:absolute;
+	left:-37px;
+	top:125px;
+	}	
+#nextBtn{ 
+	left:984px;
+	}														
+#prevBtn a, #nextBtn a{  
+	display:block;
+	width:30px;
+	height:77px;
+	background:url('/site/style9110/images9110/previous.png') no-repeat 0 0;	
+	}	
+#nextBtn a{ 
+	background:url('/site/style9110/images9110/next.png') no-repeat 0 0;	
+	}												
+
+	/* image replacement */
+.graphic, #prevBtn, #nextBtn{
+	margin:0;
+	padding:0;
+	display:block;
+	overflow:hidden;
+	text-indent:-8000px;
+	}
+	/* // image replacement */
+/* // Easy Slider */
+
+/*ADMIN BUTTON STYLE*/
+
+a.tagedit
+{
+    display: inline-block;
+    text-decoration: none;
+    position: relative; 
+    font-size:12px; 
+    font-family:Arial; 
+    color:#ffffff; 
+    padding:2px 12px 2px 12px;
+    border: 2px solid #3673b4; 
+    background: #3673b4 url(/cmscripts2/jqui/css/dot-luv/images/button_gradient.png) 50% 50% repeat; 
+    font-weight: bold;
+    -moz-border-radius: 8px; 
+    -webkit-border-radius: 8px; 
+    border-radius: 8px; 
+    white-space: nowrap;
+    margin: 2px;
+}
+a.tagedit:hover
+{
+    text-decoration: underline;
+}
+ul.loginLinks li
+{
+    margin:0px 0px 0px -10px;
+    padding:4px;
+    width:183px;
+}
+#adminBtnTitle
+{
+    margin-bottom:10px;
+}
+#adminBtnTemplate
+{
+    margin-bottom:10px;
+}
+
+/* BUILT IN PAGE STYLES */
+.tblItemList
+{
+    width:100%;
+    padding:10px;
+}
+.tblItemList td
+{
+    padding:8px;
+}
+.tblItemList tr.trItemListHeader
+    color:white;
+    font-size:14px !important;
+    font-weight:bold !important;
+}
+.tblItemList tr.trItemListItems td
+{
+    border-bottom:2px solid #321717 !important;
+    font-size:14px !important;
+}
+.tblItemList tr.trItemListItems a
+{
+    color:black !important;
+    text-decoration:none !important;
+    font-size:14px !important;
+}
+.tblItemList tr.trItemListItems a:hover
+{
+    text-decoration:underline !important;
+}
+/* END BUILT IN PAGE STYLES */
+
+/* HIDE THE BUTTON BAR ON INTERNAL PAGES */
+/*
+.boxesBackgroundInt, .mainBodyWrapperTopInt, .boxesWrapperInt{
+	display: none;
+}
+*/
+</style>
+	<link rel="SHORTCUT ICON" href="/home/180013872/180013872/images/favicon.ico" />
+</head>
+<!-- BEGIN BODY SECTION -->
+<body class="bgcolor-back">
+	<div class="header_wrapper outerGlowLight color1-back" id="header_wrapper">
+		<div class="header">
+			
+				<div style="position: absolute; float: left; left:830px; top: 30px; z-index:2;">
+					<a class="tagedit iframe fb" href="/cmscripts2/menubuilderside.asp?sec_id=180013872&whichmenu=-1&sb=1">Edit Top Menu</a>
+				</div>
+			
+			<!-- SEARCH BOX -->
+            
+            <div id="editLogo" style="position:absolute; left:830px;"><a class='tagedit iframe fb' href="/CMScripts2/editrecord.asp?sb=1&sec_id=180013872&recid=180013872&table=gcc_ministry&table_style=edit_logo&keyname=sec_id&r=jcgij4jp&imgfolder=/home/180013872/180013872/images/">Edit Logo</a></div>
+            
+            <div id="logo">
+		    
+                <div id="ministryName"><h1>church cms</h1></div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('.headerNav').css({ 'width': '100%', 'top':'4px' });
+                    });
+                </script>
+            
+			</div>
+			<div class="headerNav">
+				<div class="menuTop">
+					<div class="menuTopInt">
+					<ul class="dropdown dropdown-horizontal">
+						
+								<!-- Populate 1st menu tier -->
+								
+								<li>
+									<a href="/site/pastorupdate.asp?sec_id=180013872">Pastor's Update</a>
+								
+									<ul>
+									</ul>
+								</li>
+								
+								<!-- Populate 1st menu tier -->
+								
+								<li>
+									<a href="/site/eventcal.asp?sec_id=180013872">Event List</a>
+								
+									<ul>
+									</ul>
+								</li>
+								
+								<!-- Populate 1st menu tier -->
+								
+								<li>
+									<a href="/site/forumlist.asp?sec_id=180013872">Discussion Forums</a>
+								
+									<ul>
+									</ul>
+								</li>
+								
+								<!-- Populate 1st menu tier -->
+								
+								<li>
+									<a href="/site/audiodownloads.asp?sec_id=180013872">Audio/Video Downloads</a>
+								
+									<ul>
+									</ul>
+								</li>
+								
+					</ul>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="rotationWrapper" id="rotationWrapper" style="display: none;">
+		<div id="sliderWrapper"><div id="slider">
+			<ul>				
+				
+						<li><a href="#"><img src="/site/style9110/images9110/topbar/1.jpg" /></a></li>
+						<li><a href="#"><img src="/site/style9110/images9110/topbar/2.jpg" /></a></li>
+						<li><a href="#"><img src="/site/style9110/images9110/topbar/3.jpg" /></a></li>
+						<li><a href="#"><img src="/site/style9110/images9110/topbar/4.jpg" /></a></li>
+						
+			</ul>
+		</div></div>
+        
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		document.getElementById('rotationWrapper').style.display = 'block';
+		$("#slider").easySlider({
+			auto: true,
+			continuous: true,
+			pause: 8000,
+			speed: 1500
+});
+	});
+    </script>
+
+		<div class="topBarEdit" style="position: relative; top: -57px; z-index:999;">
+			<a class="tagedit" href="/cmscripts2/topdisplaydb.asp?sec_id=180013872">Edit Topbar Images</a>
+		</div>
+	
+	<div class="boxesBackground" style="border-top-left-radius:20px; border-top-right-radius:20px;">
+	
+	<div class="mainBodyWrapperTop">
+	
+	<div class="boxesWrapper">
+		
+		<a class="tagedit iframe fb" style="float: right; margin-top: -20px; margin-right: -20px;" href="/cmscripts2/menubuilderside.asp?sec_id=180013872&whichmenu=-2&sb=1">Edit Menu</a>
+		
+		<div id="boxSlider">
+          <ul>
+			
+			<style>
+				#boxNext, #boxPrev{
+					display: none;
+				}
+			</style>
+			
+          </ul>
+        </div>
+    </div></div></div>
+	
+	<div class="mainBodyWrapper">
+		<div class="content">
+			<span id="homepage-title"><h2>church cms</h2></span>
+			<a class='tagedit iframe fb' href="/CMScripts2/editrecord.asp?sb=1&sec_id=180013872&recid=180013872&table=gcc_ministry&table_style=scrolling_flash&keyname=sec_id&r=zryezc9w&imgfolder=/home/180013872/180013872/images/">Edit Title & Subtitle</a><a class='tagedit iframe fb' href="/CMScripts2/editrecord.asp?sb=1&sec_id=180013872&recid=180013872&table=front_page_updates&keyname=sec_id&r=pje6tlru&imgfolder=/home/180013872/180013872/images/">Edit Front Page</a><a class='tagedit iframe fb' href=/CMScripts2/addrecord.asp?sb=1&sec_id=180013872&blank=180013872&table=cpages&imgfolder=/home/180013872/180013872/images/>Add Web Page</a>
+			<p>
+			
+			</p>
+			<p>
+			
+			</p>
+		</div>
+		<div id="rightMenuWrapper">
+			
+				<div class="blockBackground"></div>
+				<div class="block">
+				</div>
+				<div class="blockContent">
+					
+					
+					<a href="#" ></a>
+					<p></p>
+				</div>
+				<a class='tagedit iframe fb' target='_parent' href=/CMScripts2/editrecord.asp?sb=1&sec_id=180013872&recid=180013872&table=gcc_ministry&table_style=link6_view_targeted&keyname=sec_id&r=7xbquzov&imgfolder=/home/180013872/180013872/images/>Edit Top Box</a>
+				<div class="blockBackground"></div>
+				<div class="block">
+				</div>
+				<div class="blockContent">
+					
+					<a href="" ></a>
+					<p></p>
+				</div>
+				<a class='tagedit iframe fb' target='_parent' href=/CMScripts2/editrecord.asp?sb=1&sec_id=180013872&recid=180013872&table=gcc_ministry&table_style=link4_view_targeted&keyname=sec_id&r=c0hogalu&imgfolder=/home/180013872/180013872/images/>Edit Middle Box</a>
+				<div class="blockBackground"></div>
+				<div class="block">
+				</div>
+				<div class="blockContent">
+					
+					<a href="#" ></a>
+					<p></p>
+				</div>
+				<a class='tagedit iframe fb' target='_parent' href=/CMScripts2/editrecord.asp?sb=1&sec_id=180013872&recid=180013872&table=gcc_ministry&table_style=link2_view_targeted&keyname=sec_id&r=zdgu0pvn&imgfolder=/home/180013872/180013872/images/>Edit Bottom Box</a>
+            <br />
+		</div>
+		<div class="wrapperClearFix">
+		</div>
+		
+	</div>
+	
+	<div class="footer_background">
+	</div>
+	<div class="mainBodyWrapperBottom">
+		<div class="footer_contents">
+			<div class="footerLeft">
+			
+			</div>
+			<span class="footerRight">
+				
+    <a class="fwLink" href="http://www.finalweb.com" target="_blank">Powered by Finalweb</a>
+    &nbsp;&nbsp;
+				
+					<b>Site Admin logged in.</b> | 	
+					<a class=cmonoff target=_parent href="/loginscripts/logoff.asp">Sign Out</a><br />
+				
+			</span>
+            <div id="search">	            
+			  <form method="get" action="/site/search1.asp">	                
+				<input type="hidden" size="1" name="sec_id" value="180013872"> 
+				<input id="searchBox" name="zoom_query" value="Search..." onfocus="if(this.value=='Search...'){this.value=''};" onblur="if(this.value==''){this.value='Search...'};" size="20">         
+			  </form>                             
+			</div>	
+		</div>
+		
+		
+			<a class="tagedit iframe fb" style="float:left; position: relative; left: 25px; margin-top: -1px;" href="/cmscripts2/menubuilderside.asp?sec_id=180013872&whichmenu=-3&sb=1">Edit Menu</a>
+		
+	</div>
+	 
+</body> 
+</html>
+<head runat="server">
+  <title></title>
+  <script type="text/javascript">
+    window.fbAsyncInit = function () {
+      FB.Canvas.setAutoResize();
+    };
+  </script>
+</head>
+<body>
+<div id="fb-root"></div>
+  <script src="//connect.facebook.net/en_US/all.js"></script>
+  <script>
+     FB.init({
+                appId: '12345678', //replace with your facebook appid
+                cookie: true,
+                status: true,
+                xfbml: true
+              });
+  </script>
+</body>

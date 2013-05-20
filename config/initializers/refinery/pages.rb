@@ -6,10 +6,10 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  # config.default_parts = ["Body", "Side Body"]
+  config.default_parts = ["Body", "Side Body"]
 
   # Configure whether to allow adding new page parts
-  # config.new_page_parts = false
+  config.new_page_parts = false
 
   # Configure whether to enable marketable_urls
   # config.marketable_urls = true
@@ -18,7 +18,7 @@ Refinery::Pages.configure do |config|
   # config.pages_per_dialog = 14
 
   # Configure how many pages per page should be displayed in the list of pages in the admin area
-  # config.pages_per_admin_index = 20
+  config.pages_per_admin_index = 20
 
   # Configure whether to strip diacritics from Western characters
   # config.approximate_ascii = false
@@ -39,13 +39,13 @@ Refinery::Pages.configure do |config|
   # Set this to true to fully expand the page hierarchy in the admin
   # config.auto_expand_admin_tree = true
 
-  # config.layout_template_whitelist = ["application"]
+  config.layout_template_whitelist = ["application","layout"]
 
-  # config.view_template_whitelist = ["home", "show"]
+  config.view_template_whitelist = ["home", "show"]
 
-  # config.use_layout_templates = false
+   config.use_layout_templates = true
 
-  # config.use_view_templates = false
+  config.use_view_templates = true
 
   # config.page_title = {:chain_page_title=>false, :ancestors=>{:separator=>" | ", :class=>"ancestors", :tag=>"span"}, :page_title=>{:class=>nil, :tag=>nil, :wrap_if_not_chained=>false}}
 

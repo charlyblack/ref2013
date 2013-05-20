@@ -29,3 +29,8 @@ Refinery::Memberships::Engine.load_seed
 
 # Added by RefineryCMS Copywriting engine
 Refinery::Copywriting::Engine.load_seed
+
+# Added by Refinery CMS Bookings extension
+Refinery::Bookings::Engine.load_seed
+      # Added by Refinery CMS Page Menus extension
+      Refinery::Menus::Engine.load_seed

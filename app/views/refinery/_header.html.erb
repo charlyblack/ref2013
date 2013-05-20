@@ -1,0 +1,7 @@
+<%= render(:partial => "/refinery/menu", :locals => {
+:dom_id => 'menu',
+:css => 'menu'
+}) %>
+<%= render :partial => "/refinery/menu", :locals => {
+      :roots => refinery_menu("some_title")
+    } %>
