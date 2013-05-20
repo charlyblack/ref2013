@@ -11,8 +11,7 @@ group :development, :test do
 end
 
 group :production do
- 
-  gem 'pg'
+ gem 'pg'
 end
 
 # Gems used only for assets and not required
@@ -57,7 +56,7 @@ gem 'refinerycms-calendar', '~>2.0.0'
 gem "refinerycms-news", '~> 2.0.0'
 gem 'refinerycms-copywriting'
 gem 'refinerycms-memberships','~> 2.0.0', :git =>'git://github.com/rbriank/refinerycms_membership.git'
-gem 'refinerycms-videojs', :git => 'git@github.com:adexin-team/refinerycms-videojs.git'
+gem 'refinerycms-videojs', :git => 'git://github.com/adexin-team/refinerycms-videojs.git'
 gem 'refinerycms-bookings', '~> 2.0.0'
 gem 'refinerycms-menus', '~> 2.0.7'
 #gem 'refinerycms-carousel.gem'
