@@ -15,6 +15,7 @@ test: &test
 production: &production
   adapter: mysql2
   host: localhost
-  database: your_production_database
-  username: your_production_database_login
-  password: your_production_database_password
+  database: refinery2013
+  username: adming2BYtww
+  password: _EXuez-np9CX
+

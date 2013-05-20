@@ -54,6 +54,13 @@ GIT
       refinerycms-core (= 2.0.10)
 
 GIT
+  remote: git://github.com/sharespost/refinerycms-stylesheets.git
+  revision: 2fdebf3903e8eba241fe7ded06207c01e237b3be
+  specs:
+    refinerycms-stylesheets (1.0)
+      refinerycms-core (~> 2.0.0)
+
+GIT
   remote: git@github.com:adexin-team/refinerycms-videojs.git
   revision: cf5d714a0f75327c7ff9a73ec31768f59ed0fb71
   specs:
@@ -274,6 +281,7 @@ DEPENDENCIES
   refinerycms-news (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)
+  refinerycms-stylesheets!
   refinerycms-videojs!
   sass-rails (~> 3.2.3)
   sqlite3

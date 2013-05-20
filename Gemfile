@@ -59,3 +59,5 @@ gem 'refinerycms-memberships','~> 2.0.0', :git =>'git://github.com/rbriank/refin
 gem 'refinerycms-videojs', :git => 'git@github.com:adexin-team/refinerycms-videojs.git'
 gem 'refinerycms-bookings', '~> 2.0.0'
 gem 'refinerycms-menus', '~> 2.0.7'
+#gem 'refinerycms-carousel.gem'
+gem 'refinerycms-stylesheets', git: 'git://github.com/sharespost/refinerycms-stylesheets.git'
